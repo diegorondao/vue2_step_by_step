@@ -1,0 +1,22 @@
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Atributo - v-if </title>
+</head>
+<body>
+    <div id="app">
+        <p v-if="message"> Text True</p>
+        <p v-if="!message"> Text False</p>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script type="text/javascript">
+        var app = new Vue({
+            el:"#app",
+            data: {
+                message: 'Vue - 2018'
+            }
+        })
+    </script>
+</body>
+</html>

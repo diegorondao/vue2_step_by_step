@@ -1,0 +1,32 @@
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Atributo - v-if x  v-show</title>
+</head>
+<body>
+    <div id="app">
+       <ul v-if="true">
+            <li v-for="frut in fruits">{{ frut.name}}</li>
+       </ul>
+       <!-- MELHOR PERFORMANCE POIS OCULTA OS ELEMENTOS COM O DISPLAY NONE QUANDO FALSE -->
+       <ul v-show="false">
+            <li v-for="frut in fruits">{{ frut.name}}</li>
+       </ul>
+       
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script type="text/javascript">
+
+        var app = new Vue({
+            el:"#app",
+            data: {
+                fruits: [
+                    {name: 'Banana'},
+                    {name: 'Apple'},
+                    {name: 'Orange'}
+                ]
+            }
+        })
+    </script>
+</body>
+</html>

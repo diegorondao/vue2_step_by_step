@@ -1,0 +1,24 @@
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Example with IF ELSE IF & ELSE</title>
+</head>
+<body>
+    <div id="app">
+        <h1 v-if="name=='Diego'"> OK IF</h1>
+        <h1 v-else-if="name=='teste'"> OK ELSEIF</h1>
+        <h1 v-else> OK ELSE</h1>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script type="text/javascript">
+
+        var app = new Vue({
+            el:"#app",
+            data: { 
+                name:'teste'                
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Atributo - v-For </title>
+</head>
+<body>
+    <div id="app">
+        <ol>
+            <li v-for="todos in listaTodos">
+                {{todos.name}} - {{todos.date}}
+            </li>
+        </ol>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script type="text/javascript">
+        var app = new Vue({
+            el:"#app",
+            data: {
+                listaTodos:[
+                    {name:' Learn Javascript', date:'01/02/2018'},
+                    {name:' Learn Vue', date:'10/03/2018'},
+                    {name:' Learn Css', date:'10/04/2018'}
+                ]
+            }
+        })
+    </script>
+</body>
+</html>

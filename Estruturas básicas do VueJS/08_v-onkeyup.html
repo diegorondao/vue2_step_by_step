@@ -1,0 +1,36 @@
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Atributo - v-on:Keyup</title>
+</head>
+<body>
+    <div id="app">
+       <ul>
+        <li v-for="frut in fruits">{{ frut.name}}</li>
+       </ul>
+       <input v-on:keyup.enter="say('Hello Enter')">
+       <input @keyup.enter="say('Hello Enter com @keyup')">
+       <input @keyup.enter.ctrl="say('Hello Enter com @keyup.ctrl')">
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script type="text/javascript">
+
+        var app = new Vue({
+            el:"#app",
+            data: {
+                fruits: [
+                    {name: 'Banana'},
+                    {name: 'Apple'},
+                    {name: 'Orange'}
+                ]
+            },
+            methods:{
+                say: function(msg){
+                    alert(msg)
+                }
+            }
+        })
+    </script>
+</body>
+</html>
