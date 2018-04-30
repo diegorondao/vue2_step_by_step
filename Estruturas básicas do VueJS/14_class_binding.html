@@ -1,0 +1,48 @@
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Example with Class Binding</title>
+    <style type="text/css">
+        
+        .color-red{
+            color: red;
+        }
+        .color-blue{
+            color: blue;
+        }
+        .is-loading{
+            background-color: red;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="app">
+            <button title="titulo do button">Passe o Mouse</button>
+            <button title="titulo">Passe o Mouse</button>
+            <button v-bind:title="titulo">Passe o Mouse</button>
+            <button :title="titulo">Passe o Mouse</button>
+
+            <h1 :class="className"> Olá class binding</h1>
+            <h1 :class="{'is-loading' : isLoading}" @click="toggleClass"> Olá class binding - is-loading: True or False </h1>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script type="text/javascript">
+
+        var app = new Vue({
+            el:"#app",
+            data: { 
+                titulo:'título alterado pelo javascript Vue',         
+                className:'color-red',         
+                isLoading: false 
+            },
+            methods:{
+                toggleClass(){
+                    this.isLoading = !this.isLoading
+                }
+            }
+        });
+    </script>
+</body>
+</html>
