@@ -1,0 +1,26 @@
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Example Criando Componentes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.0/css/bulma.min.css">
+</head>
+<body>
+     <hr>
+    <div id="app" class="container">
+        <button @click="showModal = true"> Abre Modal</button>
+        <hr>
+        <modal v-show="showModal" @meuclickfechar="showModal = false">
+            <p slot="title">TITLE VIA SLOT</slot></p>
+            <slot>Corpo da mensagem via Slot</slot>
+            <template slot="footer">
+                <button class="button is-success">Salvar Mudança</button>
+                <button class="button">Cancelar</button>
+            </template>
+        </modal>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+    <script  src="03-main.js"></script>
+</body>
+</html>
