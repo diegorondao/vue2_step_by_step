@@ -1,5 +1,18 @@
 <template>
-  <p>Telefone da empresa {{msg}}</p>
+    <md-card>
+      
+      <md-card-header>
+        <div class="md-title">DIEGO RONDÂO</div>
+      </md-card-header>
+      
+      <md-card-content>
+       Example criação de um Card 
+      </md-card-content>
+
+        <md-button class="md-raised md-primary">TABLE</md-button>
+        <md-button class="md-raised md-primary">CLEAR</md-button>
+        
+    </md-card>
 
 </template>
 
