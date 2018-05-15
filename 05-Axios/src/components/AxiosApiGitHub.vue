@@ -1,28 +1,25 @@
 <template>
   <div>
-    <ul v-if="posts && posts.length">
-        <li v-for="post in posts">
-            <p><strong>Titúlo: {{post.title}}</strong></p>
-            <p>{{post.body}}</p>
-        </li>
-    </ul>
-
+    <form @submit.prevent="search">
+        <input v-model="username" placeholder="Enter a github username">
+        
+    </form>
   </div>
 </template>
 <script>
 
+import Vue from 'vue'
 import axios from 'axios'
 
 export default {
 
-    name: 'AxiosApiGitHub.vue',
+    name: 'AxiosApiGitHub',
   
     data () {
         return {
             posts: [],
             errors: [],
         }
-    
     },
 
     created(){
