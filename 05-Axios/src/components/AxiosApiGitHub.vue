@@ -2,34 +2,47 @@
   <div>
     <form @submit.prevent="search">
         <input v-model="username" placeholder="Enter a github username">
-        
     </form>
+    <p v-if="data.name && data.location">
+        {{data.name}} {{data.login}}
+        is from
+        {{data.location}}
+    </p>
+    <p v-else>{{ errorMsg }}</p>
   </div>
 </template>
 <script>
 
+/* eslint-disable */
 import Vue from 'vue'
 import axios from 'axios'
+import VueAxios from 'vue-axios'
+
+Vue.use (VueAxios, axios)
 
 export default {
 
     name: 'AxiosApiGitHub',
   
     data () {
-        return {
-            posts: [],
-            errors: [],
-        }
+      return {
+        username: [],
+        data: [],
+        errorMsg: [],
+      }
     },
 
-    created(){
-        axios.get('https://jsonplaceholder.typicode.com/posts').then(response =>{
-
-            this.posts = response.data
-        })
-        .catch( e => {
-            this.errors.push(e)
-        })
+    methods: {
+        search (){
+            const api = `https://api.github.com/users/${this.username}`
+            Vue.axios.get(api).then(response => {
+                this.data = response.data
+            }).catch(error =>{
+                this.errorMsg = 'No user or no location'
+                this.data = []
+                console.log(error) 
+            })
+        }
     }
 }
 </script>
